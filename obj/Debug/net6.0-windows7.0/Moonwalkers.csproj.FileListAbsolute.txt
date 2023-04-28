@@ -272,3 +272,15 @@ C:\Users\ohmlo\source\repos\moonwalkers\Moonwalkers\obj\Debug\net6.0-windows7.0\
 C:\Users\ohmlo\source\repos\moonwalkers\Moonwalkers\obj\Debug\net6.0-windows7.0\Moonwalkers.pdb
 C:\Users\ohmlo\source\repos\moonwalkers\Moonwalkers\obj\Debug\net6.0-windows7.0\Moonwalkers.genruntimeconfig.cache
 C:\Users\ohmlo\source\repos\moonwalkers\Moonwalkers\obj\Debug\net6.0-windows7.0\ref\Moonwalkers.dll
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.csproj.AssemblyReference.cache
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.AssemblyInfoInputs.cache
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.AssemblyInfo.cs
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.csproj.CoreCompileInputs.cache
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.RazorAssemblyInfo.cache
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.RazorAssemblyInfo.cs
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.dll
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\refint\Moonwalkers.dll
+C:\Users\tthom\OneDrive\Desktop\launchcode\liftoff\Liftoff\obj\Debug\net6.0-windows7.0\Moonwalkers.pdb
