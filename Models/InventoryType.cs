@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace Moonwalkers.Models
 {
     public enum InventoryType
@@ -6,6 +8,8 @@ namespace Moonwalkers.Models
         Conference,
         Meetup,
         Workshop,
-        Social
+        Social,
+        Inventories
     }
 }
+

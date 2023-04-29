@@ -8,16 +8,21 @@ namespace Moonwalkers.Data
 {
     public class InventoryDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {
+        internal object inventories;
 
-
+        public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<InventoryCategory> Categories { get; set; }
         public InventoryDbContext(DbContextOptions<InventoryDbContext> options) : base(options)
         {
         }
+        
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             base.OnModelCreating(modelBuilder);
+
         }
     }
 }

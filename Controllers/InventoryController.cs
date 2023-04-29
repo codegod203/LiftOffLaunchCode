@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,9 +11,9 @@ using Microsoft.Extensions.Logging;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace CodingEvents.Controllers
+namespace Moonwalkers.Controllers
 {
-    public class Inventorycontroller : Controller
+    public class InventoryController : Controller
     {
         private InventoryDbContext context;
 
@@ -23,17 +24,18 @@ namespace CodingEvents.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            List<Inventory> inventorys= context.Inventories.ToList();
+            List<Inventory> inventories= context.Inventories.ToList();
 
-            return View(inventorys);
+            return View(inventories);
         }
 
         [HttpGet]
+
         public IActionResult Add()
         {
-            AddInventoryViewModel addEventViewModel = new AddInventoryViewModel();
+            AddInventoryViewModel addInventoryViewModel = new AddInventoryViewModel();
 
-            return View(addEventViewModel);
+            return View(addInventoryViewModel);
         }
 
         [HttpPost]
@@ -43,6 +45,7 @@ namespace CodingEvents.Controllers
             {
                 Inventory newInventory = new Inventory
                 {
+
                     Name = addInventoryViewModel.Name,
                     Description = addInventoryViewModel.Description,
                     ContactEmail = addInventoryViewModel.ContactEmail,
@@ -52,25 +55,30 @@ namespace CodingEvents.Controllers
                 context.Inventories.Add(newInventory);
                 context.SaveChanges();
 
-                return Redirect("/Events");
+                return Redirect("/Inventories");
             }
 
-            return View(addInventoriesViewModel);
+            return View(addInventoryViewModel);
+        }
+
+        private IActionResult View(object addInventoriesViewModel)
+        {
+            throw new NotImplementedException();
         }
 
         public IActionResult Delete()
         {
-            ViewBag.events = context.Inventories.ToList();
+            ViewBag.inventories= context.Inventories.ToList();
 
             return View();
         }
 
         [HttpPost]
-        public IActionResult Delete(int[] eventIds)
+        public IActionResult Delete(int[] inventoryIds)
         {
-            foreach (int eventId in eventIds)
+            foreach (int inventoryId in inventoryIds)
             {
-                Inventory? theEvent = context.Inventories.Find(eventId);
+                Inventory? theInventory = context.Inventories.Find(inventoryId);
                 context.Inventories.Remove(theInventory);
             }
 

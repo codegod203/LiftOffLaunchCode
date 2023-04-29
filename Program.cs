@@ -1,3 +1,4 @@
+
 using Moonwalkers.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
@@ -27,7 +28,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 //https://learn.microsoft.com/en-us/aspnet/core/migration/50-to-60-samples?view=aspnetcore-6.0#add-configuration-providers
 
 var connectionString = "server=localhost;user=inventorymanagement;password=inventorymanagement;database=inventorymanagement";
-var serverVersion = new MySqlServerVersion(new Version(8, 0, 32));
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 33));
 
 builder.Services.AddDbContext<InventoryDbContext>(dbContextOptions => dbContextOptions.UseMySql(connectionString, serverVersion));
 
