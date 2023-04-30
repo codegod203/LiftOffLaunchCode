@@ -1,4 +1,3 @@
-
 using Moonwalkers.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
@@ -46,7 +45,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.MapRazorPages();
-app.MapControllers(); 
+app.MapControllers();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
