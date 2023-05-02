@@ -9,7 +9,7 @@ namespace Moonwalkers.Models
         Meetup,
         Workshop,
         Social,
-        Inventories
+        Inventory
     }
 }
 

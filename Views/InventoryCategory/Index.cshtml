@@ -1,17 +1,16 @@
 ﻿
 @using Moonwalkers.Models
-@model List<Inventory>
+@model List<InventoryCategory>
 
-<h1>Inventories</h1>
-
-<p>
-    <a asp-controller="Inventories" asp-action="Add">Add Inventory</a>
+<h1>All Inventory Category</h1>
+<!--- <p>
+    <a asp-controller="Inventory" asp-action="Add">Add Inventory</a>
 </p>
 
 <p>
-    <a asp-controller="Inventories" asp-action="Delete">Delete Inventory</a>
+    <a asp-controller="Inventory" asp-action="Delete">Delete Category</a>
 </p>
-
+--->
 @if (Model.Count == 0)
 {
     <p>No inventory yet!</p>
@@ -26,24 +25,14 @@ else
             <th>
                 Name
             </th>
-            <th>
-                Description
-            </th>
-            <th>
-                Contact Email
-            </th>
-            <th>
-                Inventory Type
-            </th>
+            
         </tr>
         @foreach (var evt in Model)
         {
             <tr>
                 <td>@evt.Id</td>
                 <td>@evt.Name</td>
-                <td>@evt.Description </td>
-                <td>@evt.ContactEmail</td>
-                <td>@evt.Type</td>
+                
             </tr>
         }
     </table>

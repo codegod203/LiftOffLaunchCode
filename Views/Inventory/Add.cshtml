@@ -1,11 +1,11 @@
 ﻿
-    For more information 
+
 @using Moonwalkers.ViewModels
 @model AddInventoryViewModel
 
-<h1>Add Inventory</h1>
+<h1>Add Inventory Item </h1>
 
-<form asp-controller="Inventories" asp-action="Add" method="post">
+<form asp-controller="Inventory" asp-action="Add" method="post">
     <div class="form-group">
         <label asp-for="Name"></label>
         <input asp-for="Name" class="form-control" />
@@ -22,7 +22,7 @@
         <span asp-validation-for="ContactEmail" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Type">Inventory Type</label>
+        <label asp-for="Type">Event Type</label>
         <select asp-for="Type" asp-items="Model.InventoryTypes"></select>
     </div>
     <input type="submit" value="Add Inventory" />

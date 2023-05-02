@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,8 +7,6 @@ using Moonwalkers.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moonwalkers.ViewModels;
 using Microsoft.Extensions.Logging;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Moonwalkers.Controllers
 {
@@ -21,20 +18,17 @@ namespace Moonwalkers.Controllers
         {
             context = dbContext;
         }
-        // GET: /<controller>/
+
         public IActionResult Index()
         {
-            List<Inventory> inventories= context.Inventories.ToList();
-
+            List<Inventory> inventories = context.Inventories.ToList();
             return View(inventories);
         }
 
         [HttpGet]
-
         public IActionResult Add()
         {
             AddInventoryViewModel addInventoryViewModel = new AddInventoryViewModel();
-
             return View(addInventoryViewModel);
         }
 
@@ -45,7 +39,6 @@ namespace Moonwalkers.Controllers
             {
                 Inventory newInventory = new Inventory
                 {
-
                     Name = addInventoryViewModel.Name,
                     Description = addInventoryViewModel.Description,
                     ContactEmail = addInventoryViewModel.ContactEmail,
@@ -55,21 +48,15 @@ namespace Moonwalkers.Controllers
                 context.Inventories.Add(newInventory);
                 context.SaveChanges();
 
-                return Redirect("/Inventories");
+                return RedirectToAction("Index");
             }
 
             return View(addInventoryViewModel);
         }
 
-        private IActionResult View(object addInventoriesViewModel)
-        {
-            throw new NotImplementedException();
-        }
-
         public IActionResult Delete()
         {
-            ViewBag.inventories= context.Inventories.ToList();
-
+            ViewBag.Inventories = context.Inventories.ToList();
             return View();
         }
 
@@ -78,13 +65,18 @@ namespace Moonwalkers.Controllers
         {
             foreach (int inventoryId in inventoryIds)
             {
-                Inventory? theInventory = context.Inventories.Find(inventoryId);
+                Inventory theInventory = context.Inventories.Find(inventoryId);
                 context.Inventories.Remove(theInventory);
             }
 
             context.SaveChanges();
+            return RedirectToAction("/Index");
+        }
 
-            return Redirect("/Inventories");
+        public IActionResult View(int id)
+        {
+            Inventory inventory = context.Inventories.Single(i => i.Id == id);
+            return View(inventory);
         }
     }
 }

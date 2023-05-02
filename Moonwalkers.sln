@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.5.33530.505
+VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moonwalkers", "Moonwalkers\Moonwalkers.csproj", "{B470693A-086B-4B0B-ACC1-04526AA8C728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moonwalkers", "Moonwalkers.csproj", "{8841AD91-B193-42FA-A3D7-7B85D040AB8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B470693A-086B-4B0B-ACC1-04526AA8C728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B470693A-086B-4B0B-ACC1-04526AA8C728}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B470693A-086B-4B0B-ACC1-04526AA8C728}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B470693A-086B-4B0B-ACC1-04526AA8C728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8841AD91-B193-42FA-A3D7-7B85D040AB8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8841AD91-B193-42FA-A3D7-7B85D040AB8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8841AD91-B193-42FA-A3D7-7B85D040AB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8841AD91-B193-42FA-A3D7-7B85D040AB8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {68CA9AD4-543A-423B-9338-725DC1F54FD1}
+		SolutionGuid = {60499B3A-F079-4791-BC69-84C55E29377C}
 	EndGlobalSection
 EndGlobal
