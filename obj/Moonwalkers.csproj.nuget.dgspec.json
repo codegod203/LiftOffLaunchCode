@@ -1,33 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tthom\\OneDrive\\Desktop\\launchcode\\liftoff\\Liftoff\\Moonwalkers.csproj": {}
+    "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCode\\Moonwalkers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tthom\\OneDrive\\Desktop\\launchcode\\liftoff\\Liftoff\\Moonwalkers.csproj": {
+    "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCode\\Moonwalkers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tthom\\OneDrive\\Desktop\\launchcode\\liftoff\\Liftoff\\Moonwalkers.csproj",
+        "projectUniqueName": "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCode\\Moonwalkers.csproj",
         "projectName": "Moonwalkers",
-        "projectPath": "C:\\Users\\tthom\\OneDrive\\Desktop\\launchcode\\liftoff\\Liftoff\\Moonwalkers.csproj",
-        "packagesPath": "C:\\Users\\tthom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tthom\\OneDrive\\Desktop\\launchcode\\liftoff\\Liftoff\\obj\\",
+        "projectPath": "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCode\\Moonwalkers.csproj",
+        "packagesPath": "C:\\Users\\ohmlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCode\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\tthom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ohmlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -106,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
