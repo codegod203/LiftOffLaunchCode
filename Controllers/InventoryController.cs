@@ -7,6 +7,7 @@ using Moonwalkers.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moonwalkers.ViewModels;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Moonwalkers.Controllers
 {
@@ -19,6 +20,7 @@ namespace Moonwalkers.Controllers
             context = dbContext;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             List<Inventory> inventories = context.Inventories.ToList();
@@ -65,18 +67,18 @@ namespace Moonwalkers.Controllers
         {
             foreach (int inventoryId in inventoryIds)
             {
-                Inventory theInventory = context.Inventories.Find(inventoryId);
+                Inventory? theInventory = context.Inventories.Find(inventoryId);
                 context.Inventories.Remove(theInventory);
             }
 
             context.SaveChanges();
-            return RedirectToAction("/Index");
+            return Redirect("/Inventory");
         }
 
-        public IActionResult View(int id)
-        {
-            Inventory inventory = context.Inventories.Single(i => i.Id == id);
-            return View(inventory);
-        }
+       //public IActionResult View(int id)
+       // {
+       //     Inventory inventory = context.Inventories.Single(i => i.Id == id);
+        //    return View(inventory);
+       // }
     }
 }

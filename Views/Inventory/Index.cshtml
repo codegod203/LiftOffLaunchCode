@@ -13,22 +13,24 @@ else
     <table class="table">
         <tr>
             <th>Id
-            <th>Category Name</th>
+            <th>Inventory Item Name</th>
         </tr>
-        @foreach (Inventory category in Model)
+        
+            @foreach (var evt in Model)
         {
             <tr>
-                <td>@category.Id</td>
-                <td>@category.Name</td>
+                
+                    <td>@evt.Id</td>
+                    <td>@evt.Name</td>
             </tr>
         }
     </table>
 }
 
 <p>
-    <a asp-controller="Inventory" asp-action="Add">Add Inventory</a>
+    <a class="text-dark" asp-controller="Inventory" asp-action="Add">Add Inventory Item</a>
 </p>
 
 <p>
-    <a asp-controller="Inventory" asp-action="Delete">Delete Category</a>
+    <a class="text-dark" asp-controller="Inventory" asp-action="Delete">Delete Inventory Item</a>
 </p>

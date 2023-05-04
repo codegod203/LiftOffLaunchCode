@@ -23,10 +23,10 @@ namespace Moonwalkers.ViewModels
 
         public List<SelectListItem> InventoryTypes { get; set; } = new List<SelectListItem>
         {
-           new SelectListItem(InventoryType.Conference.ToString(), ((int)InventoryType.Conference).ToString()),
-           new SelectListItem(InventoryType.Meetup.ToString(), ((int)InventoryType.Meetup).ToString()),
-           new SelectListItem(InventoryType.Social.ToString(), ((int)InventoryType.Social).ToString()),
-           new SelectListItem(InventoryType.Workshop.ToString(), ((int)InventoryType.Workshop).ToString())
+           new SelectListItem(InventoryType.Electronics.ToString(), ((int)InventoryType.Electronics).ToString()),
+           new SelectListItem(InventoryType.Housewares.ToString(), ((int)InventoryType.Housewares).ToString()),
+           new SelectListItem(InventoryType.Gardening.ToString(), ((int)InventoryType.Gardening).ToString()),
+           new SelectListItem(InventoryType.Tools.ToString(), ((int)InventoryType.Tools).ToString())
         };
     }
 }

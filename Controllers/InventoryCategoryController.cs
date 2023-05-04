@@ -56,6 +56,27 @@ namespace Moonwalkers.Controllers
 			}
 			return View("Create", addInventoryCategoryViewModel);
 		}
+
+		public IActionResult Delete()
+		{
+			ViewBag.Categories = context.Categories.ToList();
+			return View();
+		}
+
+		[HttpPost]
+		public IActionResult Delete(int[] categoryIds)
+		{
+			foreach (int categoryId in categoryIds)
+			{
+				InventoryCategory theCategory = context.Categories.Find(categoryId);
+				context.Categories.Remove(theCategory);
+			}
+
+			context.SaveChanges();
+			return Redirect("/InventoryCategory");
+		}
+
+		
 	}
 }
 

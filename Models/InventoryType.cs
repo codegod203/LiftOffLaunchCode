@@ -5,11 +5,11 @@ namespace Moonwalkers.Models
 {
     public enum InventoryType
     {
-        Conference,
-        Meetup,
-        Workshop,
-        Social,
-        Inventory
+        Electronics,
+        Housewares,
+        Gardening,
+        Tools,
+        
     }
 }
 
