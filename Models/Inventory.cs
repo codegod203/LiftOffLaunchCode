@@ -3,27 +3,34 @@ namespace Moonwalkers.Models
 {
 	public class Inventory
 	{
-		public string? Product { get; set; }
-		public string? Name { get; set; }
+        private int inventoryQuantity;
+
+        public string? Name { get; set; }
+        public string? Product { get; set; }
+
 		public string? Description { get; set; }
 		public string? Supplier { get; set; }
-		public string? ContactEmail { get; set; }
-		//	public InventoryType Type { get; set; }
+        public decimal? ProductCost { get; set; }
+        public decimal? ProductSellPrice { get; set; }
+		public int? InventoryQuantity { get; set; }
 
-		public int Id { get; set; }
+        public int? Id { get; set; }
 
 		public Inventory()
 		{
 		}
 
-		public Inventory(string name, string product, string description, string contactEmail, string supplier)
+		public Inventory(string name, string product, string description,  string supplier, decimal productCost, decimal productSellPrice, int InventoryQuantity)
 		{
 			Name = Name;
 			Product = product;
 			Description = description;
 			Supplier = supplier;
-			ContactEmail = contactEmail;
-		}
+			ProductCost = productCost;
+			ProductSellPrice = productSellPrice;
+			InventoryQuantity = inventoryQuantity;
+
+        }
 
 		public override string? ToString()
 		{

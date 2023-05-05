@@ -9,7 +9,9 @@ namespace Moonwalkers.ViewModels
 {
 	public class AddInventoryViewModel
 	{
-		[Required(ErrorMessage = "Product is required.")]
+        internal string Name;
+
+        [Required(ErrorMessage = "Product is required.")]
 		[StringLength(50, MinimumLength = 3, ErrorMessage = "Product must be between 3 and 50 characters.")]
 		public string? Product { get; set; }
 

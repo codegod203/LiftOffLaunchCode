@@ -7,6 +7,7 @@ using Moonwalkers.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moonwalkers.ViewModels;
 using Microsoft.Extensions.Logging;
+using System.Xml.Linq;
 
 namespace Moonwalkers.Controllers
 {
@@ -39,10 +40,12 @@ namespace Moonwalkers.Controllers
 			{
 				Inventory newInventory = new Inventory
 				{
-					Product = addInventoryViewModel.Product,
-					Description = addInventoryViewModel.Description,
-					ContactEmail = addInventoryViewModel.ContactEmail,
-				};
+                Name = addInventoryViewModel.Name,
+                Product = addInventoryViewModel.Product,
+				Description = addInventoryViewModel.Description,
+				Supplier = addInventoryViewModel.Supplier,
+                ProductCost = addInventoryViewModel.ProductCost
+            };
 
 				context.Inventories.Add(newInventory);
 				context.SaveChanges();

@@ -1,0 +1,75 @@
+﻿@model List<Moonwalkers.Models.Inventory>
+
+@using (Html.BeginForm("Search", "Search", FormMethod.Get))
+{
+    <p>
+        Search: @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Filter" />
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Product
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Supplier
+            </th>
+            <th>
+                Product Cost
+            </th>
+            <th>
+                Retail Price
+            </th>
+            <th>
+                Inventory Quantity
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductSellPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InventoryQuantity)
+                </td>
+             @*   <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>*@
+            </tr>
+        }
+    </tbody>
+</table>

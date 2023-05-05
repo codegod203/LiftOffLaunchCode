@@ -12,8 +12,18 @@ else
 {
     <table class="table">
         <tr>
-            <th>Id
-            <th>Inventory Item Name</th>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Supplier</th>
+            <th>Product Cost</th>
+            <th>Product Cost</th>
+            <th>Product Sell Price</th>
+            <th>Inventory Quantity </th>
+            <th>Transaction #</th>
+
+
+
+
         </tr>
         
             @foreach (var evt in Model)
@@ -21,7 +31,7 @@ else
             <tr>
                 
                     <td>@evt.Id</td>
-                    <td>@evt.Name</td>
+                <td>@evt.Name</td>
             </tr>
         }
     </table>
