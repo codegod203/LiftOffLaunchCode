@@ -11,8 +11,8 @@ using Moonwalkers.Data;
 namespace Moonwalkers.Migrations
 {
     [DbContext(typeof(InventoryDbContext))]
-    [Migration("20230504235304_m24")]
-    partial class m24
+    [Migration("20230505193533_3rdMigration")]
+    partial class _3rdMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -219,15 +219,18 @@ namespace Moonwalkers.Migrations
 
             modelBuilder.Entity("Moonwalkers.Models.Inventory", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("ContactEmail")
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
+
+                    b.Property<int?>("InventoryQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("InventorySupplierId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
@@ -238,10 +241,18 @@ namespace Moonwalkers.Migrations
                     b.Property<decimal?>("ProductCost")
                         .HasColumnType("decimal(65,30)");
 
+                    b.Property<decimal?>("ProductSellPrice")
+                        .HasColumnType("decimal(65,30)");
+
                     b.Property<string>("Supplier")
                         .HasColumnType("longtext");
 
+                    b.Property<int?>("TransactionId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("InventorySupplierId");
 
                     b.ToTable("Inventories");
                 });
@@ -258,6 +269,23 @@ namespace Moonwalkers.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Moonwalkers.Models.InventorySupplier", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Supplier")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -309,6 +337,18 @@ namespace Moonwalkers.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Moonwalkers.Models.Inventory", b =>
+                {
+                    b.HasOne("Moonwalkers.Models.InventorySupplier", null)
+                        .WithMany("Inventory")
+                        .HasForeignKey("InventorySupplierId");
+                });
+
+            modelBuilder.Entity("Moonwalkers.Models.InventorySupplier", b =>
+                {
+                    b.Navigation("Inventory");
                 });
 #pragma warning restore 612, 618
         }
