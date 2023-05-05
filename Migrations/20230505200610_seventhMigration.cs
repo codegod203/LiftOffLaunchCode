@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Moonwalkers.Migrations
 {
-    public partial class _3rdMigration : Migration
+    public partial class seventhMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -68,22 +68,7 @@ namespace Moonwalkers.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Categories",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Suppliers",
+                name: "InventorySupplier",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -95,7 +80,7 @@ namespace Moonwalkers.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Suppliers", x => x.Id);
+                    table.PrimaryKey("PK_InventorySupplier", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -232,8 +217,6 @@ namespace Moonwalkers.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Product = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Description = table.Column<string>(type: "longtext", nullable: true)
@@ -250,9 +233,9 @@ namespace Moonwalkers.Migrations
                 {
                     table.PrimaryKey("PK_Inventories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Inventories_Suppliers_InventorySupplierId",
+                        name: "FK_Inventories_InventorySupplier_InventorySupplierId",
                         column: x => x.InventorySupplierId,
-                        principalTable: "Suppliers",
+                        principalTable: "InventorySupplier",
                         principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -318,9 +301,6 @@ namespace Moonwalkers.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Categories");
-
-            migrationBuilder.DropTable(
                 name: "Inventories");
 
             migrationBuilder.DropTable(
@@ -330,7 +310,7 @@ namespace Moonwalkers.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Suppliers");
+                name: "InventorySupplier");
         }
     }
 }

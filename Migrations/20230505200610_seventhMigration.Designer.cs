@@ -11,8 +11,8 @@ using Moonwalkers.Data;
 namespace Moonwalkers.Migrations
 {
     [DbContext(typeof(InventoryDbContext))]
-    [Migration("20230505192132_mig69")]
-    partial class mig69
+    [Migration("20230505200610_seventhMigration")]
+    partial class seventhMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
