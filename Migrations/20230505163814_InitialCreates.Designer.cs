@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Moonwalkers.Data;
 
@@ -10,9 +11,10 @@ using Moonwalkers.Data;
 namespace Moonwalkers.Migrations
 {
     [DbContext(typeof(InventoryDbContext))]
-    partial class InventoryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230505163814_InitialCreates")]
+    partial class InitialCreates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -252,6 +254,20 @@ namespace Moonwalkers.Migrations
                     b.ToTable("Inventories");
                 });
 
+            modelBuilder.Entity("Moonwalkers.Models.InventoryCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Supplier")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("Moonwalkers.Models.InventorySupplier", b =>
                 {
                     b.Property<int>("Id")
@@ -266,7 +282,7 @@ namespace Moonwalkers.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("InventorySupplier");
+                    b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

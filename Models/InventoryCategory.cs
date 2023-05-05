@@ -1,19 +1,18 @@
 ﻿using System;
 namespace Moonwalkers.Models
 {
-    public class InventoryCategory
+    public class NewInventorySupplier
     {
         public int Id { get; set; }
-        public string? Name { get; set; }
+        public string? Supplier { get; set; }
 
-
-        public InventoryCategory()
+        public NewInventorySupplier()
         {
         }
 
-        public InventoryCategory(string name)
+        public NewInventorySupplier(string supplier)
         {
-            Name = name;
+            Supplier = supplier;
         }
     }
 }

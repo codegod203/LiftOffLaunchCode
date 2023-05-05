@@ -1,0 +1,12 @@
+﻿@model Moonwalkers.ViewModels.AddInventorySupplierViewModel
+
+<h1>Add New Supplier</h1>
+
+<form asp-controller="InventorySupplier" asp-action="ProcessCreateInventorysupplierForm" method="post">
+    <div class="form-group">
+        <label asp-for="SupplierId" class="control-label"></label>
+        <select asp-for="SupplierId" asp-items="@Model.Suppliers" class="form-control"></select>
+    </div>
+
+    <input type="submit" value="Add Supplier" />
+</form>

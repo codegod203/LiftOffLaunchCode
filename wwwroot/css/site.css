@@ -16,3 +16,18 @@ html {
 body {
   margin-bottom: 60px;
 }
+a:hover {
+    color: hotpink;
+}
+
+a:link {
+    color: yellow;
+}
+
+a:visited {
+    color: yellow;
+}
+
+
+
+

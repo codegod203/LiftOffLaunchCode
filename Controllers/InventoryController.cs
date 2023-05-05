@@ -24,7 +24,7 @@ namespace Moonwalkers.Controllers
 		public IActionResult Index()
 		{
 		List<Inventory> inventories = context.Inventories.ToList();
-         //   List<Inventory> inventories = context.Inventories.Include(e => e.Category).ToList();
+         //   List<Inventory> inventories = context.Inventories.Include(e => e.Supplier).ToList();
             return View(inventories);
 		}
 
@@ -36,7 +36,7 @@ namespace Moonwalkers.Controllers
                 .Select(s => new SelectListItem
                 {
                     Value = s.Id.ToString(),
-                    Text = s.Name
+                    Text = s.Supplier
                 })
                 .ToList();
             return View(addInventoryViewModel);
@@ -50,7 +50,6 @@ namespace Moonwalkers.Controllers
 			{
 				Inventory newInventory = new Inventory
 				{
-                Name = addInventoryViewModel.Name,
                 Product = addInventoryViewModel.Product,
 				Description = addInventoryViewModel.Description,
 				Supplier = addInventoryViewModel.Supplier,
