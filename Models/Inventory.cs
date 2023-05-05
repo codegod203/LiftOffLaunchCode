@@ -6,7 +6,6 @@ namespace Moonwalkers.Models
     {
         private int inventoryQuantity;
 
-        public string? Name { get; set; }
         public string? Product { get; set; }
         public string? Description { get; set; }
         public string? Supplier { get; set; }
@@ -20,9 +19,8 @@ namespace Moonwalkers.Models
         {
         }
 
-        public Inventory(string name, string product, string description, string supplier, decimal productCost, decimal productSellPrice, int inventoryQuantity, int transactionId)
+        public Inventory( string product, string description, string supplier, decimal productCost, decimal productSellPrice, int inventoryQuantity, int transactionId)
         {
-            Name = name;
             Product = product;
             Description = description;
             Supplier = supplier;
@@ -34,7 +32,7 @@ namespace Moonwalkers.Models
 
         public override string? ToString()
         {
-            return Name;
+            return Supplier;
         }
 
         public override bool Equals(object? obj)
@@ -45,6 +43,16 @@ namespace Moonwalkers.Models
         public override int GetHashCode()
         {
             return HashCode.Combine(Id);
+        }
+
+        public decimal? GetFormattedProductCost()
+        {
+            return ProductCost != null ? decimal.Round(ProductCost.Value, 2) : (decimal?)null;
+        }
+
+        public decimal? GetFormattedProductSellPrice()
+        {
+            return ProductSellPrice != null ? decimal.Round(ProductSellPrice.Value, 2) : (decimal?)null;
         }
     }
 }

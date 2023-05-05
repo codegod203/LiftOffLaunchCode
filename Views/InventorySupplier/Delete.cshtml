@@ -3,7 +3,7 @@
 *@
 @{
 }
-<h1>Delete InventoryCategory Items</h1>
+<h1>Delete InventorySupplier Items</h1>
 
 <form method="post">
     @foreach (var evt in ViewBag.categories)
@@ -11,7 +11,7 @@
         <div class="form-group">
             <label>
                 <span>@evt.Name</span>
-                <input type="checkbox" name="categoryIds" value="@evt.Id" />
+                <input type="checkbox" name="SupplierIds" value="@evt.Id" />
             </label>
         </div>
     }
