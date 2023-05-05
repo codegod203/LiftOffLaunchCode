@@ -19,7 +19,7 @@ else
             <th>Inventory Quantity </th>
             <th>Transaction Id</th>
         </tr>
-        
+
         @foreach (var evt in Model)
         {
             <tr>
@@ -29,9 +29,8 @@ else
                 <td>@evt.Supplier</td>
                 <td>@Convert.ToDecimal(evt.ProductCost).ToString("N2")</td>
                 <td>@Convert.ToDecimal(evt.ProductSellPrice).ToString("N2")</td>
-
                 <td>@evt.InventoryQuantity</td>
-                <td>@evt.TransactionId</td>
+                <td>@evt.TransactionId</td> <!-- Access TransactionId property of each Inventory item -->
             </tr>
         }
     </table>

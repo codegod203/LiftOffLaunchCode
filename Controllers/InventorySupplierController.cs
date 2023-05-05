@@ -35,16 +35,8 @@ namespace Moonwalkers.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            var viewModel = new AddInventorySupplierViewModel
-            {
-                Suppliers = context.Suppliers
-                    .Select(s => new SelectListItem
-                    {
-                        Value = s.Id.ToString(),
-                        Text = s.Name
-                    })
-                    .ToList()
-            };
+			var viewModel = new AddInventorySupplierViewModel();
+
 
             return View(viewModel);
         }

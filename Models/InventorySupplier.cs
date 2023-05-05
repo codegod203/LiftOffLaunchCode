@@ -7,9 +7,8 @@ namespace Moonwalkers.Models
     public class InventorySupplier
     {
         public int Id { get; set; }
-        public string? Name { get; set; }
         public string? Supplier { get; set; }
-        public List<Inventory> Inventory { get; set; }
+        public List<Inventory>? Inventory { get; set; }
 
         public InventorySupplier()
         {

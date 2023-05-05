@@ -9,7 +9,6 @@ namespace Moonwalkers.ViewModels
 {
 	public class AddInventoryViewModel
 	{
-        internal string Name;
 
         [Required(ErrorMessage = "Product is required.")]
 		[StringLength(50, MinimumLength = 3, ErrorMessage = "Product must be between 3 and 50 characters.")]
@@ -34,7 +33,7 @@ namespace Moonwalkers.ViewModels
 		public decimal? ProductSellPrice { get; set; }
 
 		[Display(Name = "Transaction ID")]
-		public int? TransactionId { get; set; }
+		public long TransactionId { get; set; }
 		public string? Supplier { get; set; }
 
 		public int? SupplierId { get; set; }

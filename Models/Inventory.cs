@@ -12,14 +12,14 @@ namespace Moonwalkers.Models
         public decimal? ProductCost { get; set; }
         public decimal? ProductSellPrice { get; set; }
         public int? InventoryQuantity { get; set; }
-        public int? TransactionId { get; set; }
+        public long? TransactionId { get; set; }
         public int? Id { get; set; }
 
         public Inventory()
         {
         }
 
-        public Inventory( string product, string description, string supplier, decimal productCost, decimal productSellPrice, int inventoryQuantity, int transactionId)
+        public Inventory( string product, string description, string supplier, decimal productCost, decimal productSellPrice, int inventoryQuantity, long transactionId)
         {
             Product = product;
             Description = description;

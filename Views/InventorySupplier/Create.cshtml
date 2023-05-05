@@ -4,8 +4,8 @@
 
 <form asp-controller="InventorySupplier" asp-action="ProcessCreateInventorysupplierForm" method="post">
     <div class="form-group">
-        <label asp-for="SupplierId" class="control-label"></label>
-        <select asp-for="SupplierId" asp-items="@Model.Suppliers" class="form-control"></select>
+        <label asp-for="Supplier" class="control-label"></label>
+        <input asp-for="Supplier"  class="form-control">
     </div>
 
     <input type="submit" value="Add Supplier" />

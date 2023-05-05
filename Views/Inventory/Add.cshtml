@@ -1,39 +1,55 @@
-﻿@using Moonwalkers.ViewModels
-@model AddInventoryViewModel
+﻿@*@model Moonwalkers.Models.Inventory*@
+@model Moonwalkers.ViewModels.AddInventoryViewModel
 
-<h1>Add Inventory</h1>
+<h1>Add Inventory Item</h1>
 
-<form asp-controller="Inventory" asp-action="Add" method="post">
+@using (Html.BeginForm())
+{
     <div class="form-group">
-        <label asp-for="Product"></label>
-        <input asp-for="Product" class="form-control" />
-        <span asp-validation-for="Product" class="text-danger"></span>
+        @Html.LabelFor(model => model.Product)
+        @Html.EditorFor(model => model.Product, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Product, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
-        <label asp-for="Description"></label>
-        <input asp-for="Description" class="form-control" />
-        <span asp-validation-for="Description" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="SupplierId">Supplier </label>
-        <select asp-for="SupplierId" asp-items="Model.Suppliers"></select>
-    </div>
-    <div class="form-group">
-        <label asp-for="ProductCost"></label>
-        <input asp-for="ProductCost" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="ProductSellPrice"></label>
-        <input asp-for="ProductSellPrice" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="InventoryQuantity"></label>
-        <input asp-for="InventoryQuantity" class="form-control" />
+        @Html.LabelFor(model => model.Supplier)
+        @Html.EditorFor(model => model.Supplier, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Supplier, "", new { @class = "text-danger" })
     </div>
 
-  @*  <input type="radio" name="CodeType" value="QR"> Generate QR code<br>
-    <input type="radio" name="CodeType" value="BarCode"> Generate Bar code<br>*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description)
+        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+    </div>
 
-    <input type="submit" value="Add Inventory" />
-</form>
+    <div class="form-group">
+        @Html.LabelFor(model => model.InventoryQuantity)
+        @Html.EditorFor(model => model.InventoryQuantity, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.InventoryQuantity, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProductCost)
+        @Html.EditorFor(model => model.ProductCost, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ProductCost, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProductSellPrice)
+        @Html.EditorFor(model => model.ProductSellPrice, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ProductSellPrice, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+}
+
+<div>
+    <a asp-controller="Inventory" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
