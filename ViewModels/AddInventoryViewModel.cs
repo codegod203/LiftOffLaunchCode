@@ -27,9 +27,7 @@ namespace Moonwalkers.ViewModels
 		[Display(Name = "Product Cost")]
 		public decimal? ProductCost { get; set; }
 
-		[Required(ErrorMessage = "Email price is required.")]
-		[Display(Name = "Contact Email")]
-		public string? ContactEmail { get; set; }
+
 
 		[Required(ErrorMessage = "Sell price is required.")]
 		[Display(Name = "Product Sell Price")]
@@ -41,7 +39,8 @@ namespace Moonwalkers.ViewModels
 
 		public int? SupplierId { get; set; }
 
-		public List<SelectListItem> Suppliers { get; set; } = new List<SelectListItem>();
+
+        public List<SelectListItem> Suppliers { get; set; } = new List<SelectListItem>();
 
 		public AddInventoryViewModel(List<InventorySupplier> suppliers)
 		{

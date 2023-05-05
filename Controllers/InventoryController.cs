@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Moonwalkers.ViewModels;
 using Microsoft.Extensions.Logging;
 using System.Xml.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Moonwalkers.Controllers
 {
@@ -22,18 +23,27 @@ namespace Moonwalkers.Controllers
 
 		public IActionResult Index()
 		{
-			List<Inventory> inventories = context.Inventories.ToList();
-			return View(inventories);
+		List<Inventory> inventories = context.Inventories.ToList();
+         //   List<Inventory> inventories = context.Inventories.Include(e => e.Category).ToList();
+            return View(inventories);
 		}
 
-		[HttpGet]
-		public IActionResult Add()
-		{
-			AddInventoryViewModel addInventoryViewModel = new AddInventoryViewModel();
-			return View(addInventoryViewModel);
-		}
+        [HttpGet]
+        public IActionResult Add()
+        {
+            AddInventoryViewModel addInventoryViewModel = new AddInventoryViewModel();
+            addInventoryViewModel.Suppliers = context.Suppliers
+                .Select(s => new SelectListItem
+                {
+                    Value = s.Id.ToString(),
+                    Text = s.Name
+                })
+                .ToList();
+            return View(addInventoryViewModel);
+        }
 
-		[HttpPost]
+
+        [HttpPost]
 		public IActionResult Add(AddInventoryViewModel addInventoryViewModel)
 		{
 			if (ModelState.IsValid)
@@ -44,8 +54,13 @@ namespace Moonwalkers.Controllers
                 Product = addInventoryViewModel.Product,
 				Description = addInventoryViewModel.Description,
 				Supplier = addInventoryViewModel.Supplier,
-                ProductCost = addInventoryViewModel.ProductCost
-            };
+                ProductCost = addInventoryViewModel.ProductCost,
+				ProductSellPrice = addInventoryViewModel.ProductSellPrice,
+                InventoryQuantity = addInventoryViewModel.InventoryQuantity
+
+
+
+                };
 
 				context.Inventories.Add(newInventory);
 				context.SaveChanges();
@@ -75,10 +90,10 @@ namespace Moonwalkers.Controllers
 			return Redirect("/Home");
 		}
 
-		//public IActionResult View(int id)
-		// {
-		//     Inventory inventory = context.Inventories.Single(i => i.Id == id);
-		//    return View(inventory);
-		// }
+		public IActionResult View(int id)
+		 {
+		    Inventory inventory = context.Inventories.Single(i => i.Id == id);
+		    return View(inventory);
+		 }
 	}
 }

@@ -12,11 +12,20 @@
     {
         <div class="form-group">
             <label>
-                <span>@evt.Name</span>
                 <input type="checkbox" name="inventoryIds" value="@evt.Id" />
+                <td>@evt.Id</td>
+                <td>@evt.Product</td>
+                <td>@evt.Description</td>
+                <td>@evt.Supplier</td>
+                <td>@evt.ProductCost</td>
+                <td>@evt.ProductSellPrice</td>
+                <td>@evt.InventoryQuantity</td>
+                <td>@evt.InventoryQuantity</td>
+                <td>@evt.TransactionId</td>
+                
             </label>
         </div>
     }
 
-    <input type="submit" value="Delete Selected Inventories" class="btn btn-danger" />
+    <input type="submit" value="Delete Selected Inventory" class="btn btn-danger" />
 </form>
