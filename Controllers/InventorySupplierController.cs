@@ -61,7 +61,7 @@ namespace Moonwalkers.Controllers
 
 		public IActionResult Delete()
 		{
-			ViewBag.Categories = context.Categories.ToList();
+			ViewBag.Suppliers = context.Suppliers.ToList();
 			return View();
 		}
 
