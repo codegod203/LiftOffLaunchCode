@@ -614,6 +614,7 @@ C:\Users\ohmlo\source\repos\LiftOffLaunchCode\bin\Debug\net6.0-windows7.0\NuGet.
 C:\Users\ohmlo\source\repos\LiftOffLaunchCode\bin\Debug\net6.0-windows7.0\NuGet.Protocol.dll
 C:\Users\ohmlo\source\repos\LiftOffLaunchCode\bin\Debug\net6.0-windows7.0\NuGet.Versioning.dll
 C:\Users\ohmlo\source\repos\LiftOffLaunchCode\bin\Debug\net6.0-windows7.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\ohmlo\source\repos\LiftOffLaunchCode\bin\Debug\net6.0-windows7.0\QRCoder.dll
 C:\Users\ohmlo\source\repos\LiftOffLaunchCode\bin\Debug\net6.0-windows7.0\System.Composition.AttributedModel.dll
 C:\Users\ohmlo\source\repos\LiftOffLaunchCode\bin\Debug\net6.0-windows7.0\System.Composition.Convention.dll
 C:\Users\ohmlo\source\repos\LiftOffLaunchCode\bin\Debug\net6.0-windows7.0\System.Composition.Hosting.dll

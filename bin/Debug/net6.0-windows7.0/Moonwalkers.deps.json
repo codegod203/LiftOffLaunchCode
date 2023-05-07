@@ -16,7 +16,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.0",
           "Microsoft.Extensions.Identity.Core": "6.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13",
-          "Pomelo.EntityFrameworkCore.MySql": "6.0.0"
+          "Pomelo.EntityFrameworkCore.MySql": "6.0.0",
+          "QRCoder": "1.4.3"
         },
         "runtime": {
           "Moonwalkers.dll": {}
@@ -1461,6 +1462,17 @@
           "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.0.0"
+          }
+        }
+      },
+      "QRCoder/1.4.3": {
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/QRCoder.dll": {
+            "assemblyVersion": "1.4.3.0",
+            "fileVersion": "1.4.3.0"
           }
         }
       },
@@ -2920,6 +2932,13 @@
       "sha512": "sha512-iWloXFjpN6BllZA9oPqZTW9mNtFV5Q6DFv0WwFyh1IuOJ71btS3ifTwpLmaFXSlXzuEU9o7Rul0dU0WiwkOq0Q==",
       "path": "pomelo.entityframeworkcore.mysql/6.0.0",
       "hashPath": "pomelo.entityframeworkcore.mysql.6.0.0.nupkg.sha512"
+    },
+    "QRCoder/1.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fWuFqjm8GTlEb2GqBl3Hi8HZZeZQwBSHxvRPtPjyNbT82H0ff0JwavKRBmMaXCno1Av6McPC8aJzri0Mj2w9Jw==",
+      "path": "qrcoder/1.4.3",
+      "hashPath": "qrcoder.1.4.3.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

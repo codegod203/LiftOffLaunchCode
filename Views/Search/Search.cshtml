@@ -17,9 +17,7 @@
             <th>
                 Product
             </th>
-            <th>
-                Type
-            </th>
+
             <th>
                 Description
             </th>
@@ -35,7 +33,9 @@
             <th>
                 Inventory Quantity
             </th>
-            <th></th>
+            <th>
+                QrCode
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -64,6 +64,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.InventoryQuantity)
                 </td>
+                <td><img src="@Url.Action("GenerateQRCode", "Inventory", new { id = item.Id})" /></td>
+
+
              @*   <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |

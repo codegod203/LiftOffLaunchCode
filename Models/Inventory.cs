@@ -15,11 +15,13 @@ namespace Moonwalkers.Models
         public string? TransactionId { get; set; }
         public int? Id { get; set; }
 
+        public string? QRCode { get; set; } // Added property
+
         public Inventory()
         {
         }
 
-        public Inventory( string product, string description, string supplier, decimal productCost, decimal productSellPrice, int inventoryQuantity, string transactionId)
+        public Inventory(string product, string description, string supplier, decimal productCost, decimal productSellPrice, int inventoryQuantity, string transactionId)
         {
             Product = product;
             Description = description;

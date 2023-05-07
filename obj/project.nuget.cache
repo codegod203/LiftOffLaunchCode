@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lFHoUks0Jifd8ubnro5BWiHj6oXaW4+aLK9lHUkIdtmWODA6BRklli9/NWSleTz+9HbTAkXCQQ3DDvOmww3wSA==",
+  "dgSpecHash": "uVTUHNtIFxk4xTCNX+dhDnJaIFvA2VsvT6Kiv8if/m2Ra7K66anSdGTS9GLLqX8fV5k7/debJRhv6gE9fwpYIA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCode\\Moonwalkers.csproj",
   "expectedPackageFiles": [
@@ -89,6 +89,7 @@
     "C:\\Users\\ohmlo\\.nuget\\packages\\nuget.protocol\\6.3.1\\nuget.protocol.6.3.1.nupkg.sha512",
     "C:\\Users\\ohmlo\\.nuget\\packages\\nuget.versioning\\6.3.1\\nuget.versioning.6.3.1.nupkg.sha512",
     "C:\\Users\\ohmlo\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.0\\pomelo.entityframeworkcore.mysql.6.0.0.nupkg.sha512",
+    "C:\\Users\\ohmlo\\.nuget\\packages\\qrcoder\\1.4.3\\qrcoder.1.4.3.nupkg.sha512",
     "C:\\Users\\ohmlo\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\ohmlo\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\ohmlo\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
