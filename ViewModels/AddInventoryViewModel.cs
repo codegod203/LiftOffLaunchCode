@@ -33,7 +33,7 @@ namespace Moonwalkers.ViewModels
 		public decimal? ProductSellPrice { get; set; }
 
 		[Display(Name = "Transaction ID")]
-		public long TransactionId { get; set; }
+		public string? TransactionId { get; set; }
 		public string? Supplier { get; set; }
 
 		public int? SupplierId { get; set; }

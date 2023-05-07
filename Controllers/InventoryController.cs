@@ -9,21 +9,25 @@ using Moonwalkers.ViewModels;
 using Microsoft.Extensions.Logging;
 using System.Xml.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
+
 namespace Moonwalkers.Controllers
 {
     public class InventoryController : Controller
     {
         private InventoryDbContext context;
+
         public InventoryController(InventoryDbContext dbContext)
         {
             context = dbContext;
         }
+
         public IActionResult Index()
         {
             List<Inventory> inventories = context.Inventories.ToList();
             //   List<Inventory> inventories = context.Inventories.Include(e => e.Supplier).ToList();
             return View(inventories);
         }
+
         [HttpGet]
         public IActionResult Add()
         {
@@ -43,6 +47,7 @@ namespace Moonwalkers.Controllers
         {
             if (ModelState.IsValid)
             {
+                string? transactionId = Guid.NewGuid().ToString(); // Generate a unique transaction ID
                 Inventory newInventory = new Inventory
                 {
                     Product = addInventoryViewModel.Product,
@@ -50,7 +55,8 @@ namespace Moonwalkers.Controllers
                     Supplier = addInventoryViewModel.Supplier,
                     ProductCost = addInventoryViewModel.ProductCost,
                     ProductSellPrice = addInventoryViewModel.ProductSellPrice,
-                    InventoryQuantity = addInventoryViewModel.InventoryQuantity
+                    InventoryQuantity = addInventoryViewModel.InventoryQuantity,
+                    TransactionId = transactionId // Set the transaction number to the unique ID
                 };
                 context.Inventories.Add(newInventory);
                 context.SaveChanges();
@@ -58,11 +64,14 @@ namespace Moonwalkers.Controllers
             }
             return View(addInventoryViewModel);
         }
+
+
         public IActionResult Delete()
         {
             ViewBag.Inventories = context.Inventories.ToList();
             return View();
         }
+
         [HttpPost]
         public IActionResult Delete(int[] inventoryIds)
         {
@@ -74,6 +83,7 @@ namespace Moonwalkers.Controllers
             context.SaveChanges();
             return Redirect("/Home");
         }
+
         public IActionResult View(int id)
         {
             Inventory inventory = context.Inventories.Single(i => i.Id == id);
@@ -81,12 +91,3 @@ namespace Moonwalkers.Controllers
         }
     }
 }
-
-
-
-
-
-
-
-
-
