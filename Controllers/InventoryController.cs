@@ -15,6 +15,7 @@ using Microsoft.VisualStudio.Web.CodeGeneration;
 namespace Moonwalkers.Controllers
 {
     public class InventoryController : Controller
+
     {
         private InventoryDbContext context;
 
@@ -50,6 +51,7 @@ namespace Moonwalkers.Controllers
             List<Inventory> inventories = context.Inventories.ToList();
             //   List<Inventory> inventories = context.Inventories.Include(e => e.Supplier).ToList();
             foreach (Inventory inventory in inventories)
+
             {
                 inventory.QRCode = GenerateQRCode(inventory);
             }
@@ -84,6 +86,8 @@ namespace Moonwalkers.Controllers
                     ProductCost = addInventoryViewModel.ProductCost,
                     ProductSellPrice = addInventoryViewModel.ProductSellPrice,
                     InventoryQuantity = addInventoryViewModel.InventoryQuantity,
+                    TotalInventory = addInventoryViewModel.TotalInventory,
+
                     TransactionId = transactionId // Set the transaction number to the unique ID
                 };
                 newInventory.QRCode = GenerateQRCode(newInventory);

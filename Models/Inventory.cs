@@ -2,8 +2,10 @@
 
 namespace Moonwalkers.Models
 {
-    public class Inventory
+    public class Inventory  
+
     {
+
         private int inventoryQuantity;
 
         public string? Product { get; set; }
@@ -13,6 +15,8 @@ namespace Moonwalkers.Models
         public decimal? ProductSellPrice { get; set; }
         public int? InventoryQuantity { get; set; }
         public string? TransactionId { get; set; }
+        public int? TotalInventory { get; set; }
+
         public int? Id { get; set; }
 
         public string? QRCode { get; set; } // Added property
@@ -21,7 +25,7 @@ namespace Moonwalkers.Models
         {
         }
 
-        public Inventory(string product, string description, string supplier, decimal productCost, decimal productSellPrice, int inventoryQuantity, string transactionId)
+        public Inventory(string product, string description, string supplier, decimal productCost, decimal productSellPrice, int inventoryQuantity, int totalInventory, string transactionId)
         {
             Product = product;
             Description = description;
@@ -29,6 +33,7 @@ namespace Moonwalkers.Models
             ProductCost = productCost;
             ProductSellPrice = productSellPrice;
             InventoryQuantity = inventoryQuantity;
+            TotalInventory = totalInventory;
             TransactionId = transactionId;
         }
 

@@ -64,6 +64,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.InventoryQuantity)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalInventory)
+                </td>
                 <td><img src="@Url.Action("GenerateQRCode", "Inventory", new { id = item.Id})" /></td>
 
 

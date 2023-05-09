@@ -21,8 +21,10 @@ namespace Moonwalkers.ViewModels
 		[Required(ErrorMessage = "Quantity is required.")]
 		[Display(Name = "Inventory Quantity")]
 		public int InventoryQuantity { get; set; }
+        [Display(Name = "Inventory Quantity")]
+        public int TotalInventory { get; set; }
 
-		[Required(ErrorMessage = "Cost price is required.")]
+        [Required(ErrorMessage = "Cost price is required.")]
 		[Display(Name = "Product Cost")]
 		public decimal? ProductCost { get; set; }
 

@@ -17,6 +17,7 @@ else
             <th>Product Cost</th>
             <th>Product Sell Price</th>
             <th>Inventory Quantity </th>
+            <th>Total Inventory</th>
             <th>Transaction Id</th>
             <th>QrCode</th>
         </tr>
@@ -31,6 +32,8 @@ else
                 <td>@Convert.ToDecimal(evt.ProductCost).ToString("N2")</td>
                 <td>@Convert.ToDecimal(evt.ProductSellPrice).ToString("N2")</td>
                 <td>@evt.InventoryQuantity</td>
+                <td>@evt.TotalInventory</td>
+
                 <td>@evt.TransactionId</td> <!-- Access TransactionId property of each Inventory item -->
                 <td><img src="@Url.Action("GenerateQRCode", "Inventory", new { id = evt.Id})" /></td>
 
