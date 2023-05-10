@@ -11,9 +11,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                ID
-            </th>
+
             <th>
                 Product
             </th>
@@ -34,6 +32,9 @@
                 Inventory Quantity
             </th>
             <th>
+                Total Inventory
+            </th>
+            <th>
                 QrCode
             </th>
         </tr>
@@ -42,9 +43,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Product)
                 </td>
@@ -65,7 +64,8 @@
                     @Html.DisplayFor(modelItem => item.InventoryQuantity)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TotalInventory)
+                    @*   @Html.DisplayFor(modelItem => item.TotalInventory)*@
+                    @(Model.Where(i => i.Product == item.Product).Sum(i => i.InventoryQuantity))
                 </td>
                 <td><img src="@Url.Action("GenerateQRCode", "Inventory", new { id = item.Id})" /></td>
 

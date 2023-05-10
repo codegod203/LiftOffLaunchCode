@@ -11,6 +11,7 @@ using System.IO;
 using QRCoder;
 using System.Text;
 using Microsoft.VisualStudio.Web.CodeGeneration;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Moonwalkers.Controllers
 {
@@ -57,7 +58,7 @@ namespace Moonwalkers.Controllers
             }
             return View(inventories);
         }
-
+        [Authorize(Roles = "Admin, editor")]
         [HttpGet]
         public IActionResult Add()
         {

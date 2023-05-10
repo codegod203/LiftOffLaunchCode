@@ -8,6 +8,8 @@ using Moonwalkers.Models;
 using Moonwalkers.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,17 +23,21 @@ namespace Moonwalkers.Controllers
 
         public InventorySupplierController(InventoryDbContext dbContext)
 		{
-			context = dbContext;
+            context = dbContext;
 		}
 
-		// GET: /<controller>/
-		[HttpGet]
+        // GET: /<controller>/
+        [Authorize(Roles = "Admin, editor")]
+
+        [HttpGet]
 		public IActionResult Index()
 		{
 			List<InventorySupplier> suppliers = context.Suppliers.ToList();
 
 			return View(suppliers);
 		}
+        [Authorize(Roles = "Admin, editor")]
+
         [HttpGet]
         public IActionResult Create()
         {

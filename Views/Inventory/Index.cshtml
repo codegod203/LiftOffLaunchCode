@@ -10,7 +10,7 @@ else
 {
     <table class="table">
         <tr>
-            <th>Id</th>
+           @* <th>Id</th>*@
             <th>Product</th>
             <th>Description</th>
             <th>Supplier</th>
@@ -25,15 +25,14 @@ else
         @foreach (var evt in Model)
         {
             <tr>
-                <td>@evt.Id</td>
+              @*   <td>@evt.Id</td>*@
                 <td>@evt.Product</td>
                 <td>@evt.Description</td>
                 <td>@evt.Supplier</td>
                 <td>@Convert.ToDecimal(evt.ProductCost).ToString("N2")</td>
                 <td>@Convert.ToDecimal(evt.ProductSellPrice).ToString("N2")</td>
                 <td>@evt.InventoryQuantity</td>
-                <td>@evt.TotalInventory</td>
-
+                <td>@(Model.Where(i => i.Product == evt.Product).Sum(i => i.InventoryQuantity))</td>
                 <td>@evt.TransactionId</td> <!-- Access TransactionId property of each Inventory item -->
                 <td><img src="@Url.Action("GenerateQRCode", "Inventory", new { id = evt.Id})" /></td>
 

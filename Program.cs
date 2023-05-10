@@ -18,6 +18,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequireUppercase = true;
     options.Password.RequireLowercase = false;
 })
+    .AddRoles<IdentityRole>()
 .AddEntityFrameworkStores<InventoryDbContext>(); // change to InventoryDbContext here
 
 //--- MySql connection
