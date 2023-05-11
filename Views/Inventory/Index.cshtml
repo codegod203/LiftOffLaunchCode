@@ -1,4 +1,7 @@
-﻿@model List<Moonwalkers.Models.Inventory>
+﻿@using System;
+@using System.Linq;
+
+@model List<Moonwalkers.Models.Inventory>
 
 <h1>All Inventory Items</h1>
 
@@ -19,6 +22,7 @@ else
             <th>Inventory Quantity </th>
             <th>Total Inventory</th>
             <th>Transaction Id</th>
+            <th>Date Time</th>
             <th>QrCode</th>
         </tr>
 
@@ -34,8 +38,12 @@ else
                 <td>@evt.InventoryQuantity</td>
                 <td>@(Model.Where(i => i.Product == evt.Product).Sum(i => i.InventoryQuantity))</td>
                 <td>@evt.TransactionId</td> <!-- Access TransactionId property of each Inventory item -->
+                <td>@evt.DateTime.ToString("MM/dd/yyyy hh:mm:ss tt")</td>
                 <td><img src="@Url.Action("GenerateQRCode", "Inventory", new { id = evt.Id})" /></td>
-
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = evt.Id })
+                    @*  @Html.ActionLink("Cart", "Cart", new { id = item.Id }) |*@
+                </td>
             </tr>
         }
     </table>

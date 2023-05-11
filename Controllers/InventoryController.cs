@@ -12,6 +12,7 @@ using QRCoder;
 using System.Text;
 using Microsoft.VisualStudio.Web.CodeGeneration;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Moonwalkers.Controllers
 {
@@ -80,7 +81,7 @@ namespace Moonwalkers.Controllers
             {
                 string? transactionId = Guid.NewGuid().ToString(); // Generate a unique transaction ID
                 Inventory newInventory = new Inventory
-                {
+                {   Id = addInventoryViewModel.Id,
                     Product = addInventoryViewModel.Product,
                     Description = addInventoryViewModel.Description,
                     Supplier = addInventoryViewModel.Supplier,
@@ -136,5 +137,66 @@ namespace Moonwalkers.Controllers
             Inventory inventory = context.Inventories.Single(i => i.Id == id);
             return View(inventory);
         }
+        public IActionResult Edit(int id)
+        {
+            Inventory inventory = context.Inventories.Single(i => i.Id == id);
+
+            AddInventoryViewModel addInventoryViewModel = new AddInventoryViewModel
+            {
+                Id = inventory.Id,
+                Product = inventory.Product,
+                Description = inventory.Description,
+                Supplier = inventory.Supplier,
+                ProductCost = inventory.ProductCost,
+                ProductSellPrice = inventory.ProductSellPrice,
+                InventoryQuantity = (int)inventory.InventoryQuantity,
+                TotalInventory = (int)inventory.TotalInventory
+            };
+
+            addInventoryViewModel.Suppliers = context.Suppliers
+                .Select(s => new SelectListItem
+                {
+                    Value = s.Id.ToString(),
+                    Text = s.Supplier
+                })
+                .ToList();
+
+            return View(addInventoryViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(AddInventoryViewModel addInventoryViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                string transactionId = Guid.NewGuid().ToString(); // Generate a unique transaction ID
+                Inventory inventory = context.Inventories.Single(i => i.Id == addInventoryViewModel.Id);
+                inventory.Product = addInventoryViewModel.Product;
+                inventory.Description = addInventoryViewModel.Description;
+                inventory.Supplier = addInventoryViewModel.Supplier;
+                inventory.ProductCost = addInventoryViewModel.ProductCost;
+                inventory.ProductSellPrice = addInventoryViewModel.ProductSellPrice;
+                inventory.InventoryQuantity = addInventoryViewModel.InventoryQuantity;
+                inventory.TotalInventory = addInventoryViewModel.TotalInventory;
+                inventory.TransactionId = transactionId; // Set the transaction number to the unique ID
+                inventory.QRCode = GenerateQRCode(inventory);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            addInventoryViewModel.Suppliers = context.Suppliers
+                .Select(s => new SelectListItem
+                {
+                    Value = s.Id.ToString(),
+                    Text = s.Supplier
+                })
+                .ToList();
+
+            return View(addInventoryViewModel);
+        }
+
     }
+
+
+
+
 }

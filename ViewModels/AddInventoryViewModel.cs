@@ -39,6 +39,7 @@ namespace Moonwalkers.ViewModels
 		public string? Supplier { get; set; }
 
 		public int? SupplierId { get; set; }
+		public int? Id {get; set; }
 
 
         public List<SelectListItem> Suppliers { get; set; } = new List<SelectListItem>();

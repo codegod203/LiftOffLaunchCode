@@ -221,6 +221,9 @@ namespace Moonwalkers.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
@@ -244,6 +247,9 @@ namespace Moonwalkers.Migrations
 
                     b.Property<string>("Supplier")
                         .HasColumnType("longtext");
+
+                    b.Property<int?>("TotalInventory")
+                        .HasColumnType("int");
 
                     b.Property<string>("TransactionId")
                         .HasColumnType("longtext");

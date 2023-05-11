@@ -2,10 +2,8 @@
 
 namespace Moonwalkers.Models
 {
-    public class Inventory  
-
+    public class Inventory
     {
-
         private int inventoryQuantity;
 
         public string? Product { get; set; }
@@ -15,14 +13,14 @@ namespace Moonwalkers.Models
         public decimal? ProductSellPrice { get; set; }
         public int? InventoryQuantity { get; set; }
         public string? TransactionId { get; set; }
+        public DateTime DateTime { get; set; }
         public int? TotalInventory { get; set; }
-
         public int? Id { get; set; }
-
         public string? QRCode { get; set; } // Added property
 
         public Inventory()
         {
+            DateTime = DateTime.Now;
         }
 
         public Inventory(string product, string description, string supplier, decimal productCost, decimal productSellPrice, int inventoryQuantity, int totalInventory, string transactionId)
@@ -35,6 +33,7 @@ namespace Moonwalkers.Models
             InventoryQuantity = inventoryQuantity;
             TotalInventory = totalInventory;
             TransactionId = transactionId;
+            DateTime = DateTime.Now;
         }
 
         public override string? ToString()
@@ -61,5 +60,6 @@ namespace Moonwalkers.Models
         {
             return ProductSellPrice != null ? decimal.Round(ProductSellPrice.Value, 2) : (decimal?)null;
         }
+
     }
 }

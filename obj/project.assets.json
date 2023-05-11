@@ -10537,11 +10537,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCode\\Moonwalkers.csproj",
+      "projectUniqueName": "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCodeJ\\Moonwalkers.csproj",
       "projectName": "Moonwalkers",
-      "projectPath": "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCode\\Moonwalkers.csproj",
+      "projectPath": "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCodeJ\\Moonwalkers.csproj",
       "packagesPath": "C:\\Users\\ohmlo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCode\\obj\\",
+      "outputPath": "C:\\Users\\ohmlo\\source\\repos\\LiftOffLaunchCodeJ\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
