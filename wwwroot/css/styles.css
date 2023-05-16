@@ -1,4 +1,10 @@
-body {
+﻿namespace Test.wwwroot.css {
+    public class styles
+
+{
+    body
+
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -292,4 +298,7 @@ body {
     .header-left {
         display: none;
     }
+}
+
+}
 }

@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Calendar";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assuming you have a shared layout file
+}
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#calendar').fullCalendar({
+                // Calendar options and configurations
+                // Customize the calendar as per your requirements
+                // For example:
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultView: 'month',
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: [
+                    // Sample events
+                    {
+                        title: 'Event 1',
+                        start: '2023-05-15T10:00:00',
+                        end: '2023-05-15T12:00:00'
+                    },
+                    {
+                        title: 'Event 2',
+                        start: '2023-05-16T14:00:00',
+                        end: '2023-05-16T16:00:00'
+                    },
+                    // Add more events as needed
+                ]
+            });
+        });
+    </script>
+}
+
+<div id="calendar"></div>

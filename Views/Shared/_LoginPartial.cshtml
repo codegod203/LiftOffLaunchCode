@@ -11,7 +11,9 @@
     </li>
     <li class="nav-item">
         <form id="logoutForm" class="form-inline bg-warning text-dark" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-white">Logout</button>
+                <button id="logout" type="submit" class="nav-link btn btn-link ">
+                    <span class="material-icons-outlined">logout</span>
+                </button>
         </form>
     </li>
 }
