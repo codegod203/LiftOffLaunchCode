@@ -21,7 +21,30 @@
                 },
                 defaultView: 'month',
                 editable: true,
-                eventLimit: true, // allow "more" link when too many events
+                eventLimit: true, // allow "more" link when too many events,
+                selectable: true,
+                selectHelper: true,
+                select: function (start, end) {
+                    // Open a modal or perform any other action to add an event
+                    var eventData = {
+                        title: 'New Event',
+                        start: start,
+                        end: end
+                    };
+                    $('#calendar').fullCalendar('renderEvent', eventData, true); // Add the event to the calendar
+                },
+                eventClick: function (calEvent, jsEvent, view) {
+                    // Open a modal or perform any other action to update/delete the event
+                    var title = prompt('Update Event Title:', calEvent.title);
+                    if (title) {
+                        calEvent.title = title;
+                        $('#calendar').fullCalendar('updateEvent', calEvent);
+                    } else {
+                        if (confirm("Are you sure you want to delete this event?")) {
+                            $('#calendar').fullCalendar('removeEvents', calEvent._id);
+                        }
+                    }
+                },
                 events: [
                     // Sample events
                     {

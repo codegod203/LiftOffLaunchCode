@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Moonwalkers.Models;
 using QRCoder;
+using Microsoft.Extensions.Logging;
 
 namespace Moonwalkers.Data
 {
@@ -11,6 +12,7 @@ namespace Moonwalkers.Data
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<InventorySupplier> Categories { get; set; }
         public DbSet<InventorySupplier> Suppliers { get; set; }
+        public DbSet<EventModel> Events { get; set; } // New DbSet for events
 
         public InventoryDbContext(DbContextOptions<InventoryDbContext> options) : base(options)
         {
@@ -21,16 +23,6 @@ namespace Moonwalkers.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public List<Inventory> GetInventoriesWithTotalInventory()
-        {
-            using (var context = new InventoryDbContext(new DbContextOptionsBuilder<InventoryDbContext>()
-                .UseSqlServer("server=localhost;user=inventorymanagement;password=inventorymanagement;database=inventorymanagement")
-                .Options))
-            {
-                var total = context.Inventories.FromSqlRaw("SELECT  Id,Product, Description,Supplier,ProductCost,ProductSellPrice,TransactionId,QRCode,InventoryQuantity,(SELECT SUM(InventoryQuantity)FROM Inventories as i2 WHERE i2.Product = i1.Product) AS TotalInventory FROM Inventories AS i1").ToList();
-                return total;
-            }
-        }
-
+        // Additional methods and configurations as needed
     }
 }

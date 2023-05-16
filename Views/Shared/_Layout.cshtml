@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Test</title>
+    <title>@ViewData["Title"] - Moonwalkers</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Test.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Moonwalkers.styles.css" asp-append-version="true" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title> DASHBOARD </title>
@@ -32,32 +32,36 @@
             <div class="menu-icon " onclick="openSidebar()">
                 <span class="material-icons-outlined">menu</span>
             </div>
-            <div class="header-left">
+            @*<div class="header-left">
                 <span class="material-icons-outlined">search</span>
-            </div>
-            <div class="header-right nav-item">
-                <span class="material-icons-outlined">notifications</span>
-                <span class="material-icons-outlined">
-                    <a href="https://outlook.office.com/mail/" target="_blank">email</a>
-                </span>
-                <span class="material-icons-outlined">logout</span>
-                
+            </div>*@
+           <div class="header-right nav-item">
+    <span class="material-icons-outlined">notifications</span>
+    <a href="https://outlook.office.com/mail/" target="_blank" class="material-icons-outlined">email</a>
+    <a asp-area="Identity" asp-page="/Account/Logout" class="material-icons-outlined">logout</a>
+</div>
 
-            </div>
         </header>
         <aside id="sidebar">
             <div class="sidebar-title">
                 <div class="sidebar-brand">
                     <span class="material-icons-outlined"></span>
                     MOON WALKERS
-                </div>
-                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
-            </div>
+                
+</div>
+<div class="material-icons-outlined" onclick="closeSidebar()">close</div>
+</div>
+
 
             <ul class="sidebar-list">
                 <li class="sidebar-list-item">
                     <a asp-area="" asp-controller="home" asp-action="Index">
                         <span class="material-icons-outlined">home</span>HOME
+                    </a>
+                </li>
+                 <li class="sidebar-list-item">
+                    <a asp-area="" asp-controller="Search" asp-action="search">
+                        <span class="material-icons-outlined">search</span>SEARCH
                     </a>
                 </li>
 
@@ -110,7 +114,7 @@
         <!-- End Sidebar original version below-->
         <!--<main role="main" class="pb-3">-->
           <main  class="main-container">
-        @RenderBody()
+            @RenderBody()
     </main>
     </div>
 
@@ -124,7 +128,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+   @* <script src="~/js/site.js" asp-append-version="true"></script>*@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

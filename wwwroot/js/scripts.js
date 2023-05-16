@@ -24,7 +24,7 @@ function closeSidebar() {
 // BAR CHART
 var barChartOptions = {
     series: [{
-        data: [10, 8, 6, 4, 2]
+        data: [159, 135, 100, 60, 40]
     }],
     chart: {
         type: 'bar',
@@ -102,12 +102,12 @@ var areaChartOptions = {
                 text: 'Dollars',
             },
         },
-       /* {
+        {
             opposite: true,
             title: {
                 text: 'Views',
             },
-        },*/
+        },
     ],
     tooltip: {
         shared: true,
